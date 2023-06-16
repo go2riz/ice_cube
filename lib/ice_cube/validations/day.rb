@@ -6,7 +6,7 @@ module IceCube
 
     def day(*days)
       days.flatten.each do |day|
-        unless day.is_a?(Fixnum) || day.is_a?(Symbol)
+        unless day.is_a?(Integer) || day.is_a?(Symbol)
           raise ArgumentError, "expecting Fixnum or Symbol value for day, got #{day.inspect}"
         end
         day = TimeUtil.sym_to_wday(day)

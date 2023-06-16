@@ -4,7 +4,7 @@ module IceCube
 
     def day_of_month(*days)
       days.flatten.each do |day|
-        unless day.is_a?(Fixnum)
+        unless day.is_a?(Integer)
           raise ArgumentError, "expecting Fixnum value for day, got #{day.inspect}"
         end
         validations_for(:day_of_month) << Validation.new(day)

@@ -4,7 +4,7 @@ module IceCube
 
     def second_of_minute(*seconds)
       seconds.flatten.each do |second|
-      unless second.is_a?(Fixnum)
+      unless second.is_a?(Integer)
         raise ArgumentError, "Expecting Fixnum value for second, got #{second.inspect}"
       end
         validations_for(:second_of_minute) << Validation.new(second)
